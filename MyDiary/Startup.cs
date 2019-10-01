@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using MyDiary.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyDiary.Models;
 
 namespace MyDiary
 {
@@ -41,6 +42,9 @@ namespace MyDiary
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<MyDiaryContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MyDiaryContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
