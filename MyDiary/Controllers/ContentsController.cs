@@ -45,6 +45,7 @@ namespace MyDiary.Controllers
         // GET: Contents/Create
         public IActionResult Create()
         {
+
             return View();
         }
 
@@ -57,6 +58,7 @@ namespace MyDiary.Controllers
         {
             if (ModelState.IsValid)
             {
+               // content.Writer = User.Identity.Name;
                 _context.Add(content);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -123,8 +125,7 @@ namespace MyDiary.Controllers
                 return NotFound();
             }
 
-            var content = await _context.Content
-                .FirstOrDefaultAsync(m => m.ContentId == id);
+            var content = await _context.Content.FirstOrDefaultAsync(m => m.ContentId == id);
             if (content == null)
             {
                 return NotFound();

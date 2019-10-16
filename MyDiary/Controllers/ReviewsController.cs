@@ -21,6 +21,7 @@ namespace MyDiary.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
+            
             return View(await _context.Review.ToListAsync());
         }
 
@@ -45,6 +46,8 @@ namespace MyDiary.Controllers
         // GET: Reviews/Create
         public IActionResult Create()
         {
+            ViewBag.ContentId = new SelectList(_context.Content, "ContentId", "Title");
+            //var contents = _context.Content.ToListAsync();
             return View();
         }
 
