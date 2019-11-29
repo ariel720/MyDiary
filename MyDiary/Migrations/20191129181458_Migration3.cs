@@ -2,7 +2,7 @@
 
 namespace MyDiary.Migrations
 {
-    public partial class Migration2 : Migration
+    public partial class Migration3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

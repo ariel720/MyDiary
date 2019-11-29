@@ -10,8 +10,8 @@ using MyDiary.Models;
 namespace MyDiary.Migrations
 {
     [DbContext(typeof(MyDiaryContext))]
-    [Migration("20191001014403_Migration1")]
-    partial class Migration1
+    [Migration("20191129181458_Migration3")]
+    partial class Migration3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
