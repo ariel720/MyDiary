@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MyDiary.Models;
 
 namespace MyDiary.Models
 {
-    public class MyDiaryContext : DbContext
+    public class MyDiaryContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public MyDiaryContext (DbContextOptions<MyDiaryContext> options)
             : base(options)
