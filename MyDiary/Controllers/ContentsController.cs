@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyDiary.Models;
 
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
+
 namespace MyDiary.Controllers
 {
     public class ContentsController : Controller
@@ -45,7 +48,7 @@ namespace MyDiary.Controllers
         // GET: Contents/Create
         public IActionResult Create()
         {
-
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             return View();
         }
 
@@ -69,6 +72,8 @@ namespace MyDiary.Controllers
         // GET: Contents/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
+
             if (id == null)
             {
                 return NotFound();
@@ -120,6 +125,7 @@ namespace MyDiary.Controllers
         // GET: Contents/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             if (id == null)
             {
                 return NotFound();
@@ -149,5 +155,25 @@ namespace MyDiary.Controllers
         {
             return _context.Content.Any(e => e.ContentId == id);
         }
+
+       //calendar
+        public ActionResult CalendarView()
+        {
+            var list = _context.Content.ToList();
+            ViewBag.list = new SelectList(list, "ContentId", "Title");
+            return View();
+        }
+         /*public JsonResult GetEvents()
+        {
+            var events = _context.Content.ToList();
+            //return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return  Json(events, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult Search(int id)
+        {
+            var events = _context.Content.Where(s => s.ContentId == id).ToList();
+            //return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return Json(events);
+        }*/
     }
 }
