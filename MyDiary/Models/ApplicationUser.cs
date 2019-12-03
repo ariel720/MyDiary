@@ -8,5 +8,6 @@ namespace MyDiary.Models
 {
     public class ApplicationUser : IdentityUser<string>
     {
+
     }
 }

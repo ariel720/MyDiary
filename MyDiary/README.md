@@ -16,3 +16,9 @@ This application let users post their stories and save comments about each posti
 
  - Framework : Asp.net core
  - Database Server : Gearhost
+
+ ### Features
+
+ - Authentication  : Registration & Login function
+ - Web API  : Get diary contents data from database server and display in Calendar view (Calendar menu)
+ - 

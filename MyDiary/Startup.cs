@@ -13,6 +13,8 @@ using MyDiary.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyDiary.Models;
+using Microsoft.AspNetCore.Authentication.Facebook;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace MyDiary
 {
@@ -48,6 +50,29 @@ namespace MyDiary
                 .AddDefaultTokenProviders();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddAuthentication(options => {
+                options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = "802093880298663";
+                    facebookOptions.AppSecret = "69a6c8b1dc58e30b49709d25819d468b";
+
+                }).AddCookie();
+                /*
+                .AddGoogle(options =>
+                {
+                    IConfigurationSection googleAuthNSection =
+                        Configuration.GetSection("Authentication:Google");
+
+                    options.ClientId = "1034442543132-0s8d8s0e61pq39afkojjkt2pptojq16e.apps.googleusercontent.com";
+                    options.ClientSecret = "EKFHMvw7t8Sxpn6bONG5ku7l";
+                }); */
+
+
 
             services.AddDbContext<MyDiaryContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MyDiaryContext")));

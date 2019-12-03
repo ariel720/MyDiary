@@ -163,17 +163,5 @@ namespace MyDiary.Controllers
             ViewBag.list = new SelectList(list, "ContentId", "Title");
             return View();
         }
-         /*public JsonResult GetEvents()
-        {
-            var events = _context.Content.ToList();
-            //return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-            return  Json(events, JsonRequestBehavior.AllowGet);
-        }
-        public JsonResult Search(int id)
-        {
-            var events = _context.Content.Where(s => s.ContentId == id).ToList();
-            //return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-            return Json(events);
-        }*/
     }
 }

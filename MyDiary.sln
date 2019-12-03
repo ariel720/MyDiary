@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDiary", "MyDiary\MyDiary.csproj", "{27FBD7CC-C375-41B7-9DEF-85FEA7C1CDF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDiary", "MyDiary\MyDiary.csproj", "{27FBD7CC-C375-41B7-9DEF-85FEA7C1CDF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{AA13662C-C783-47CB-9640-F5C932E81EA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{27FBD7CC-C375-41B7-9DEF-85FEA7C1CDF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27FBD7CC-C375-41B7-9DEF-85FEA7C1CDF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27FBD7CC-C375-41B7-9DEF-85FEA7C1CDF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA13662C-C783-47CB-9640-F5C932E81EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA13662C-C783-47CB-9640-F5C932E81EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA13662C-C783-47CB-9640-F5C932E81EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA13662C-C783-47CB-9640-F5C932E81EA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
