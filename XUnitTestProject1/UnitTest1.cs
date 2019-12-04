@@ -30,9 +30,11 @@ namespace XUnitTestProject1
         [Fact]
         public void Test4()
         {
-            var home = new HomeController();
-            var output = home.Privacy();
+            var cc = new ContentsController();
+            var output = cc.Index();
             Assert.NotNull(output);
         }
+        
+
     }
 }
